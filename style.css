@@ -1,0 +1,272 @@
+.logo {
+    font-family: 'Cookie', cursive;
+    font-size: 34px;
+    color: red;
+    /* margin-left:-80px; */
+}
+
+.a:active,
+a:focus,
+a:hover {
+    background-color: #333;
+    padding: 10px;
+}
+
+body {
+    background-color: black;
+}
+
+.call-to-action {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.food-and-happiness {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -16px;
+
+}
+
+.customer-centered {
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Cookie', cursive;
+    margin-top: -14px;
+}
+
+.MAIN {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+.food {
+    color: red;
+}
+
+.happiness {
+    color: #ff8c01;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-option {
+    display: flex;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 400px, repeat(3, 400px);
+
+}
+
+button {
+    width: 30%;
+    margin: 0 auto;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.ABOUT {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 90px;
+}
+
+.second-part-of-the-about-page {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.fast-delivery,
+.day,
+.network {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+#delivery,
+#duration,
+#wifi,
+#location-container,
+#phone-container {
+    color: #ff8c01;
+    font-size: 30px;
+}
+
+#location,
+#phone {
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.fast-delivery-text {
+    margin-top: 20px;
+}
+
+.the-about-heading {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.the-about-body {
+    font-size: 26px;
+}
+
+.SERVICES,
+.CONTACT {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-top: 40px;
+}
+
+.service-second {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+
+}
+
+.contact-section {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+form,
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    margin-top: 12px;
+
+}
+
+form input {
+    margin-bottom: 12px;
+    width: 430px;
+    padding: 12px;
+    color: black;
+
+}
+
+.service-heading,
+.contact-heading {
+    margin: 0 auto;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    margin-bottom: 12px;
+    border: 3px solid greenyellow;
+    color: black;
+
+}
+
+.send-message {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+/* checks if the input value matches the pattern i wrote in my html file */
+input[type="email"]:invalid,
+input[type="text"]:invalid {
+    border: 3px solid red;
+    outline: none;
+}
+
+input[type="email"]:valid,
+input[type="text"]:valid {
+    border: 3px solid greenyellow;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+}
+
+
+@media screen and (max-width:1000px) {
+    img[src="image/meal.png"] {
+        width: 250px;
+        height: 350px;
+    }
+
+    .the-about-body {
+        font-size: 11.8px;
+
+    }
+
+    form input,
+    textarea {
+        margin-bottom: 12px;
+        width: 430px;
+        padding: 12px;
+        outline: none;
+        color: black;
+        background-color: white;
+    }
+
+    textarea {
+        margin-bottom: 12px;
+
+    }
+
+
+
+
+}
+
+@media only screen and (max-width:500px) {
+    .service-second div {
+        margin-right: 5px;
+    }
+
+    img[src="image/meal.png"] {
+        width: initial;
+        height: initial;
+    }
+
+    .the-about-body {
+        font-size: 26px;
+
+    }
+
+}
