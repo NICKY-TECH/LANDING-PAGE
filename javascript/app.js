@@ -97,7 +97,7 @@ function checkIfInView(){
         let newBottomValue=currentValues.bottom;
         let newRightValue=currentValues.right;
         let newLeftValue=currentValues.left;
-        if((newTopValue>=0)&&(newLeftValue>=0)&&(newBottomValue<=windowHeight)&&(newRightValue<=windowWidth)){
+        if((newTopValue<windowHeight)&&(newLeftValue<windowHeight)&&(newBottomValue<=windowHeight)&&(newRightValue<=windowWidth)){
             container[a].classList.add('green');
             allLinks[b].classList.add('green');
         }
