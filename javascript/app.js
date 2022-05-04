@@ -21,6 +21,7 @@ for (let i = 0; i < 4; i++) {
 
 }
 menu.append(fragment);
+let allLinks=document.querySelectorAll('a');
 // adds an event listener to the parent Element
 menu.addEventListener('click', activate);
 
@@ -68,9 +69,47 @@ function activate(event) {
         let colorSection = container[j].getAttribute('class');
         if (targetedEventLink === colorSection) {
             container[j].style.backgroundColor = "#333333";
-            container[j].scrollIntoView(true);
+            let options={
+                behavior:"smooth",
+                block:"end",
+                inline:"nearest"
+            }
+            container[j].scrollIntoView(options);
 
         }
     }
 
+}
+let currentX;
+let currentY;
+let linkContainer=document.querySelectorAll('a');
+window.addEventListener('scroll',checkIfInView);
+function checkIfInView(){
+   let windowHeight=window.innerHeight;  
+   let windowWidth=window.innerWidth;
+   for(let a=0;a<container.length;a++){
+      for(let b=0;b<allLinks.length;b++){
+        let theClassOfTheActiveSection=container[a].getAttribute('class');
+        let theHrefofLink=allLinks[b].getAttribute('href');
+          if(theClassOfTheActiveSection===theHrefofLink){
+        let currentValues=container[a].getBoundingClientRect();
+        let newTopValue=currentValues.top;
+        let newBottomValue=currentValues.bottom;
+        let newRightValue=currentValues.right;
+        let newLeftValue=currentValues.left;
+        if((newTopValue>=0)&&(newLeftValue>=0)&&(newBottomValue<=windowHeight)&&(newRightValue<=windowWidth)){
+            container[a].classList.add('green');
+            allLinks[b].classList.add('green');
+        }
+        else{
+            container[a].classList.remove('green');
+            allLinks[b].classList.remove('green'); 
+        }
+        
+        
+      
+    }
+    }
+
+} 
 }
