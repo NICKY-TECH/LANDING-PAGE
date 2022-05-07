@@ -9,7 +9,7 @@ This is the El cliente primero landing page.
 - addEventListener
 - Document Fragment
 - preventDefault()
--getBoundingClientRect()
+- getBoundingClientRect()
 
 > ### About El cliente primero 
 >
