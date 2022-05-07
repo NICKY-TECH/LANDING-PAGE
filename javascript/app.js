@@ -52,7 +52,7 @@ function activate(event) {
             }
 
         }
-        // the for loop monitors the container array containing the section elements
+       
         for (let i = 0; i < container.length; i++) {
             let classOfSection = container[i].getAttribute('class');
             if (orange == classOfSection) {
@@ -62,7 +62,6 @@ function activate(event) {
 
 
     }
-    // changes the background-color of the selected link and places the section in view
     for (let j = 0; j < container.length; j++) {
         let colorSection = container[j].getAttribute('class');
         if (targetedEventLink === colorSection) {
