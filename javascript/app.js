@@ -21,8 +21,6 @@ for (let i = 0; i < 4; i++) {
 
 }
 menu.append(fragment);
-let allLinks=document.querySelectorAll('a');
-// adds an event listener to the parent Element
 menu.addEventListener('click', activate);
 
 function activate(event) {
@@ -80,36 +78,26 @@ function activate(event) {
     }
 
 }
-let currentX;
-let currentY;
-let linkContainer=document.querySelectorAll('a');
-window.addEventListener('scroll',checkIfInView);
-function checkIfInView(){
-   let windowHeight=window.innerHeight;  
-   let windowWidth=window.innerWidth;
-   for(let a=0;a<container.length;a++){
-      for(let b=0;b<allLinks.length;b++){
-        let theClassOfTheActiveSection=container[a].getAttribute('class');
-        let theHrefofLink=allLinks[b].getAttribute('href');
-          if(theClassOfTheActiveSection===theHrefofLink){
-        let currentValues=container[a].getBoundingClientRect();
-        let newTopValue=currentValues.top;
-        let newBottomValue=currentValues.bottom;
-        let newRightValue=currentValues.right;
-        let newLeftValue=currentValues.left;
-        if((newTopValue<windowHeight)){
-            container[a].classList.add('green');
-            allLinks[b].classList.add('green');
-        }
-        else{
-            container[a].classList.remove('green');
-            allLinks[b].classList.remove('green'); 
-        }
-        
-        
-      
-    }
-    }
-
-} 
-}
+ window.addEventListener('scroll',checkIfInView);
+ function checkIfInView(){
+     for(let y=0;y<container.length;y++){
+         let topScreen=container[y].getBoundingClientRect().top;
+         let currentScrollBe=window.pageYOffset;
+         console.log(`${container[y]} current container section`)
+         let totalTopScreen=topScreen+window.pageYOffset;
+         let bottomScreen=container[y].getBoundingClientRect().bottom;
+         let totalBottomScreen=bottomScreen+window.pageYOffset;
+         let cost=container[y].getAttribute('class');
+         if((currentScrollBe<totalBottomScreen)&&(currentScrollBe>=totalTopScreen)){
+             console.log(` current scroll${currentScrollBe}`);
+             console.log(`the top ${totalBottomScreen} for ${cost}`);
+             console.log(` the bottom ${totalBottomScreen} for ${cost}`);
+             container[y].classList.add('green');
+             console.log(container);
+         }
+         else{
+             container[y].classList.remove('green');
+             console.log(container);
+         }
+     }
+ }
