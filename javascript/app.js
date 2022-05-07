@@ -52,7 +52,7 @@ function activate(event) {
             }
 
         }
-       
+
         for (let i = 0; i < container.length; i++) {
             let classOfSection = container[i].getAttribute('class');
             if (orange == classOfSection) {
@@ -66,10 +66,10 @@ function activate(event) {
         let colorSection = container[j].getAttribute('class');
         if (targetedEventLink === colorSection) {
             container[j].style.backgroundColor = "#333333";
-            let options={
-                behavior:"smooth",
-                block:"end",
-                inline:"nearest"
+            let options = {
+                behavior: "smooth",
+                block: "end",
+                inline: "nearest"
             }
             container[j].scrollIntoView(options);
 
@@ -77,26 +77,26 @@ function activate(event) {
     }
 
 }
- window.addEventListener('scroll',checkIfInView);
- function checkIfInView(){
-     for(let y=0;y<container.length;y++){
-         let topScreen=container[y].getBoundingClientRect().top;
-         let currentScrollBe=window.pageYOffset;
-         console.log(`${container[y]} current container section`)
-         let totalTopScreen=topScreen+window.pageYOffset;
-         let bottomScreen=container[y].getBoundingClientRect().bottom;
-         let totalBottomScreen=bottomScreen+window.pageYOffset;
-         let cost=container[y].getAttribute('class');
-         if((currentScrollBe<totalBottomScreen)&&(currentScrollBe>=totalTopScreen)){
-             console.log(` current scroll${currentScrollBe}`);
-             console.log(`the top ${totalBottomScreen} for ${cost}`);
-             console.log(` the bottom ${totalBottomScreen} for ${cost}`);
-             container[y].classList.add('green');
-             console.log(container);
-         }
-         else{
-             container[y].classList.remove('green');
-             console.log(container);
-         }
-     }
- }
+window.addEventListener('scroll', checkIfInView);
+
+function checkIfInView() {
+    for (let y = 0; y < container.length; y++) {
+        let topScreen = container[y].getBoundingClientRect().top;
+        let currentScrollBe = window.pageYOffset;
+        console.log(`${container[y]} current container section`)
+        let totalTopScreen = topScreen + window.pageYOffset;
+        let bottomScreen = container[y].getBoundingClientRect().bottom;
+        let totalBottomScreen = bottomScreen + window.pageYOffset;
+        let cost = container[y].getAttribute('class');
+        if ((currentScrollBe < totalBottomScreen) && (currentScrollBe >= totalTopScreen)) {
+            console.log(` current scroll${currentScrollBe}`);
+            console.log(`the top ${totalBottomScreen} for ${cost}`);
+            console.log(` the bottom ${totalBottomScreen} for ${cost}`);
+            container[y].classList.add('green');
+            console.log(container);
+        } else {
+            container[y].classList.remove('green');
+            console.log(container);
+        }
+    }
+}
