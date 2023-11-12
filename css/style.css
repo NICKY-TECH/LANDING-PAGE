@@ -225,6 +225,10 @@ textarea:focus {
     outline: none;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 
 @media screen and (max-width:1000px) {
     img[src="image/meal.png"] {
